@@ -1,0 +1,30 @@
+body {
+    background-image: url("../img/shield.svg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+h1{
+    color: aqua;
+    font-size: 110px;
+    margin-top: 548px;
+}
+.letter {
+    opacity: 0;
+    animation: show-letter 0.5s ease-in-out forwards;
+    font-family: sui-generis;
+    color: #ffffff;
+}
+@keyframes show-letter {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
