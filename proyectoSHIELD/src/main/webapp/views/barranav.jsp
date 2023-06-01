@@ -15,6 +15,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/CapacidadSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/CapacidadSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('agente')">
+                <img src="<%=con%>/assets/img/agente.png" class="nav-img">
+                Agentes
+            </button>
+            <div class="sec" id="agente">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgentesSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgentesSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>

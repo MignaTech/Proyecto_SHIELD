@@ -1,6 +1,9 @@
 document.getElementById("btnListCapacidad").addEventListener("click", function() {
     window.location.href = "../CapacidadSV";
 });
+document.getElementById("btnListAgente").addEventListener("click", function() {
+    window.location.href = "../AgentesSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");
