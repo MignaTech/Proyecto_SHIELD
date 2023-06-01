@@ -13,5 +13,6 @@
     })
 </script>
     <script src="<%=con%>/assets/js/verPerfil.js"></script>
+    <script src="<%=con%>/assets/js/funciones.js"></script>
     </body>
 </html>
