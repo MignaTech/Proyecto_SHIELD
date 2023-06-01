@@ -7,6 +7,14 @@
                 <img src="<%=con%>/assets/img/escri.png" class="nav-img">
                 Dashboard
             </button>
+            <button class="nav-ul" onclick="mosBTN('capacidad')">
+                <img src="<%=con%>/assets/img/danio.png" class="nav-img">
+                Capacidad
+            </button>
+            <div class="sec" id="capacidad">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/CapacidadSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/CapacidadSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
