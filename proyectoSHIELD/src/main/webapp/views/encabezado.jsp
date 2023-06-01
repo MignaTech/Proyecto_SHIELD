@@ -16,6 +16,8 @@
     %>
     <title><%= titu %></title>
     <link rel="stylesheet" href="<%=con%>/assets/css/estilos.css" />
+    <link rel="stylesheet" href="<%=con%>/assets/css/tabla.css" />
+    <link rel="stylesheet" href="<%=con%>/assets/css/formulario.css" />
 </head>
 <body>
     <header>
