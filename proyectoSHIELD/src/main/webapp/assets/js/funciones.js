@@ -13,6 +13,9 @@ document.getElementById("btnListGrupo").addEventListener("click", function() {
 document.getElementById("btnListPais").addEventListener("click", function() {
     window.location.href = "../PaisesSV";
 });
+document.getElementById("btnListTpRaza").addEventListener("click", function() {
+    window.location.href = "../Tip_AlienSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");

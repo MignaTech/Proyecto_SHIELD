@@ -47,6 +47,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/PaisesSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/PaisesSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('tip_aliens')">
+                <img src="<%=con%>/assets/img/alien.png" class="nav-img">
+                Tipos Aliens
+            </button>
+            <div class="sec" id="tip_aliens">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/Tip_AlienSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/Tip_AlienSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
