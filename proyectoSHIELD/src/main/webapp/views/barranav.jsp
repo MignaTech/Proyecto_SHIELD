@@ -31,6 +31,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/EquipoSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/EquipoSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('grupoSH')">
+                <img src="<%=con%>/assets/img/grupo.png" class="nav-img">
+                Grupo-SH
+            </button>
+            <div class="sec" id="grupoSH">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SuperH_SV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SuperH_SV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>

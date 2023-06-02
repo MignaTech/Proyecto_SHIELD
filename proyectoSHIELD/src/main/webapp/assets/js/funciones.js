@@ -7,6 +7,9 @@ document.getElementById("btnListAgente").addEventListener("click", function() {
 document.getElementById("btnListEquipo").addEventListener("click", function() {
     window.location.href = "../EquipoSV";
 });
+document.getElementById("btnListGrupo").addEventListener("click", function() {
+    window.location.href = "../SuperH_SV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");
