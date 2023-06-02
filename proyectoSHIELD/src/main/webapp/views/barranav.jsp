@@ -39,6 +39,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SuperH_SV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SuperH_SV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('pais')">
+                <img src="<%=con%>/assets/img/pais.png" class="nav-img">
+                Pais
+            </button>
+            <div class="sec" id="pais">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/PaisesSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/PaisesSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>

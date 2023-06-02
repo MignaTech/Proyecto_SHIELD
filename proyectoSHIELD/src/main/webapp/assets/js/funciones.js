@@ -10,6 +10,9 @@ document.getElementById("btnListEquipo").addEventListener("click", function() {
 document.getElementById("btnListGrupo").addEventListener("click", function() {
     window.location.href = "../SuperH_SV";
 });
+document.getElementById("btnListPais").addEventListener("click", function() {
+    window.location.href = "../PaisesSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");
