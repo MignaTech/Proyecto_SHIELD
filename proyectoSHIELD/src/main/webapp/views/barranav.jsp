@@ -55,6 +55,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/Tip_AlienSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/Tip_AlienSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('ataques')">
+                <img src="<%=con%>/assets/img/ataque.png" class="nav-img">
+                Ataques
+            </button>
+            <div class="sec" id="ataques">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AtaqueSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AtaqueSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
