@@ -4,6 +4,9 @@ document.getElementById("btnListCapacidad").addEventListener("click", function()
 document.getElementById("btnListAgente").addEventListener("click", function() {
     window.location.href = "../AgentesSV";
 });
+document.getElementById("btnListEquipo").addEventListener("click", function() {
+    window.location.href = "../EquipoSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");
