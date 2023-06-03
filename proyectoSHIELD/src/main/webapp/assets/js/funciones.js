@@ -28,6 +28,9 @@ document.getElementById("btnListDirector").addEventListener("click", function() 
 document.getElementById("btnListJuntas").addEventListener("click", function() {
     window.location.href = "../JuntasSV";
 });
+document.getElementById("btnListStark").addEventListener("click", function() {
+    window.location.href = "../SiShSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");

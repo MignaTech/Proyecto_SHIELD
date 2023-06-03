@@ -87,6 +87,13 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/JuntasSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/JuntasSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('stark')">
+                <img src="<%=con%>/assets/img/Stark.png" class="nav-img">
+            </button>
+            <div class="sec" id="stark">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SiShSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SiShSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
