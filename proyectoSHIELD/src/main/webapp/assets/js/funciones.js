@@ -22,6 +22,9 @@ document.getElementById("btnListAtaque").addEventListener("click", function() {
 document.getElementById("btnListLider").addEventListener("click", function() {
     window.location.href = "../LiderSV";
 });
+document.getElementById("btnListDirector").addEventListener("click", function() {
+    window.location.href = "../DirectorSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");
