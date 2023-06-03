@@ -19,6 +19,9 @@ document.getElementById("btnListTpRaza").addEventListener("click", function() {
 document.getElementById("btnListAtaque").addEventListener("click", function() {
     window.location.href = "../AtaqueSV";
 });
+document.getElementById("btnListLider").addEventListener("click", function() {
+    window.location.href = "../LiderSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");

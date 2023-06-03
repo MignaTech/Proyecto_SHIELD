@@ -63,6 +63,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AtaqueSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AtaqueSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('lideres')">
+                <img src="<%=con%>/assets/img/lider.png" class="nav-img">
+                Lideres
+            </button>
+            <div class="sec" id="lideres">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/LiderSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/LiderSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
