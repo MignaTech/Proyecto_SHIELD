@@ -102,6 +102,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenJuntasSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenJuntasSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('age_atk')">
+                <img src="<%=con%>/assets/img/protege.png" class="nav-img">
+                Agentes-Ataque
+            </button>
+            <div class="sec" id="age_atk">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenAtkSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenAtkSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>

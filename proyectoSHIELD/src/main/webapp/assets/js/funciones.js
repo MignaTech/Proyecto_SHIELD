@@ -34,6 +34,9 @@ document.getElementById("btnListStark").addEventListener("click", function() {
 document.getElementById("btnListAgenJunta").addEventListener("click", function() {
     window.location.href = "../AgenJuntasSV";
 });
+document.getElementById("btnListAgenAtk").addEventListener("click", function() {
+    window.location.href = "../AgenAtkSV";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");
