@@ -94,6 +94,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SiShSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/SiShSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('age_jun')">
+                <img src="<%=con%>/assets/img/junta.png" class="nav-img">
+                Agentes-Juntas
+            </button>
+            <div class="sec" id="age_jun">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenJuntasSV'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenJuntasSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
