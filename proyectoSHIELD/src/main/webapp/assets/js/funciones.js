@@ -37,6 +37,9 @@ document.getElementById("btnListAgenJunta").addEventListener("click", function()
 document.getElementById("btnListAgenAtk").addEventListener("click", function() {
     window.location.href = "../AgenAtkSV";
 });
+document.getElementById("btnListHeroe").addEventListener("click", function() {
+    window.location.href = "../HeroeSV?page=1";
+});
 
 function mosBTN(id) {
     var seccion = document.getElementsByClassName("sec");

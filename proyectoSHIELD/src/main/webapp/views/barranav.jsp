@@ -110,6 +110,14 @@
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenAtkSV'">Listar</button>
                 <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/AgenAtkSV?action=showAddForm'">Agregar</button>
             </div>
+            <button class="nav-ul" onclick="mosBTN('heroe')">
+                <img src="<%=con%>/assets/img/superHero.png" class="nav-img">
+                Heroe
+            </button>
+            <div class="sec" id="heroe">
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/HeroeSV?page=1'">Listar</button>
+                <button class="nav-ul ocultar" onclick="window.location.href='<%=con%>/HeroeSV?action=showAddForm'">Agregar</button>
+            </div>
         </div>
     </nav>
 </div>
