@@ -15,7 +15,10 @@ public class AgentesDAO {
     public static final String FROMsql = "SELECT a.cod_agen,a.n_agen,a.espe,a.tp_ayuda, a2.n_agen AS n_Dir\n" +
             "FROM agentes a\n" +
             "join agentes a2 on a.agen_dir = a2.cod_agen";
-    public static final String WHEREsql = "SELECT * FROM agentes WHERE cod_agen = ?";
+    public static final String WHEREsql = "SELECT a.cod_agen,a.n_agen,a.espe,a.tp_ayuda,a.agen_dir, a2.n_agen AS n_Dir\n" +
+            "FROM agentes a\n" +
+            "join agentes a2 on a.agen_dir = a2.cod_agen\n" +
+            "WHERE a.cod_agen = ?";
 
     public int addAgentes(Agentes elem) {
         Connection conn = null;
@@ -123,7 +126,8 @@ public class AgentesDAO {
                 String especi = rs.getString("espe");
                 String t_ayuda = rs.getString("tp_ayuda");
                 int dir = rs.getInt("agen_dir");
-                return new Agentes(codigo,nombre,especi,t_ayuda,dir);
+                String direc = rs.getString("n_Dir");
+                return new Agentes(codigo,nombre,especi,t_ayuda,dir,direc);
             }
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);

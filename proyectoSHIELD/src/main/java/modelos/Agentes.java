@@ -16,6 +16,15 @@ public class Agentes implements Serializable {
         setAgenDir(agenDir);
     }
 
+    public Agentes(int codAgen, String nAgen, String espe, String tpAyuda, int agenDir, String nombreDir) {
+        setCodAgen(codAgen);
+        setnAgen(nAgen);
+        setEspe(espe);
+        setTpAyuda(tpAyuda);
+        setAgenDir(agenDir);
+        setNombreDir(nombreDir);
+    }
+
     public Agentes(int codAgen, String nAgen, String espe, String tpAyuda, String nombreDir) {
         setCodAgen(codAgen);
         setnAgen(nAgen);

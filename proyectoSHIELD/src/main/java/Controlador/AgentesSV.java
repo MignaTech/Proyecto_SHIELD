@@ -63,12 +63,12 @@ public class AgentesSV extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
         String action = rq.getParameter("meto2");
-        int direc = Integer.parseInt(rq.getParameter("director"));
         if (action.equals("add")) {
             int codigo = agentesDAO.n_Agentes()+1;
             String nombre = rq.getParameter("nombre");
             String espe = rq.getParameter("especializacion");
             String ayuda = rq.getParameter("tipoAyuda");
+            int direc = Integer.parseInt(rq.getParameter("director"));
             Agentes agente = new Agentes(codigo,nombre,espe,ayuda,direc);
             if (agentesDAO.addAgentes(agente)>0) {
                 rq.setAttribute("msj_img", "succe.svg");
@@ -85,6 +85,7 @@ public class AgentesSV extends HttpServlet {
             String nombre = rq.getParameter("nombre");
             String espe = rq.getParameter("especializacion");
             String ayuda = rq.getParameter("tipoAyuda");
+            int direc = Integer.parseInt(rq.getParameter("director"));
             Agentes agente = agentesDAO.getByAgentes(codigo);
             if (agente != null) {
                 agente.setnAgen(nombre);
