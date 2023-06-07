@@ -70,7 +70,7 @@ public class CapacidadSV extends HttpServlet {
                 rq.setAttribute("msj_img", "borrar.png");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
-            rq.setAttribute("msj_title", "El Pais");
+            rq.setAttribute("msj_title", "La Capacidad");
             rq.setAttribute("msj_return", "CapacidadSV");
             rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
         } else if (action.equals("edit")) {
