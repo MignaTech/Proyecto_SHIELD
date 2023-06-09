@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Subdivisiones implements Serializable {
     private int codSub,codshapoya;
-    private String nSub;
+    private String nSub,grupo,nDir;
     private int dirSub;
     public Subdivisiones(){}
     public Subdivisiones(int codSub, int codshapoya, String nSub, int dirSub) {
@@ -12,6 +12,15 @@ public class Subdivisiones implements Serializable {
         setCodshapoya(codshapoya);
         setnSub(nSub);
         setDirSub(dirSub);
+    }
+
+    public Subdivisiones(int codSub, int codshapoya, String nSub, int dirSub, String grupo, String nDir) {
+        setCodSub(codSub);
+        setCodshapoya(codshapoya);
+        setnSub(nSub);
+        setDirSub(dirSub);
+        setGrupo(grupo);
+        setnDir(nDir);
     }
 
     public int getCodSub() {
@@ -44,5 +53,21 @@ public class Subdivisiones implements Serializable {
 
     public void setDirSub(int dirSub) {
         this.dirSub = dirSub;
+    }
+
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo) {
+        this.grupo = grupo;
+    }
+
+    public String getnDir() {
+        return nDir;
+    }
+
+    public void setnDir(String nDir) {
+        this.nDir = nDir;
     }
 }

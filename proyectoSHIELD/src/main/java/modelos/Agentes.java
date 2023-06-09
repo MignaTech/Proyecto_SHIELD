@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Agentes implements Serializable {
     private int codAgen;
     private String nAgen,espe,tpAyuda;
-    private int agenDir;
+    private int agenDir,idUsuario;
     private String nombreDir;
     public Agentes () {}
     public Agentes(int codAgen, String nAgen, String espe, String tpAyuda, int agenDir) {
@@ -14,6 +14,15 @@ public class Agentes implements Serializable {
         setEspe(espe);
         setTpAyuda(tpAyuda);
         setAgenDir(agenDir);
+    }
+
+    public Agentes(int codAgen, String nAgen, String espe, String tpAyuda, int agenDir, int idUsuario) {
+        setCodAgen(codAgen);
+        setnAgen(nAgen);
+        setEspe(espe);
+        setTpAyuda(tpAyuda);
+        setAgenDir(agenDir);
+        setIdUsuario(idUsuario);
     }
 
     public Agentes(int codAgen, String nAgen, String espe, String tpAyuda, int agenDir, String nombreDir) {
@@ -79,5 +88,13 @@ public class Agentes implements Serializable {
 
     public void setNombreDir(String nombreDir) {
         this.nombreDir = nombreDir;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

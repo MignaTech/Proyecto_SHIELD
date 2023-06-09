@@ -6,6 +6,9 @@ public class Ataque implements Serializable {
     private int codAtk,nroBajas,nroHeridos;
     private String nAtk,paisAtk,n_pais;
     public Ataque(){}
+    public Ataque(int codAtk) {
+        setCodAtk(codAtk);
+    }
     public Ataque(int codAtk, String nAtk, int nroBajas, int nroHeridos, String paisAtk) {
         setCodAtk(codAtk);
         setnAtk(nAtk);
