@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;" pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="modelos.Heroe , java.util.List" %>
@@ -12,7 +12,7 @@
     int tol_pagina = Integer.parseInt(request.getAttribute("tol_pagina").toString());
     List<Heroe> registros = (List<Heroe>) request.getAttribute("heroes");
 %>
-<%@ include file="../barranav.jsp" %>
+<%@ include file="../UIAdmin/barranav.jsp" %>
 <article class="cont-body">
     <div class="cont-base">
         <div class="base-header">
@@ -40,7 +40,7 @@
         <table>
             <thead>
             <tr>
-                <th>CÃ³digo</th>
+                <th>Código</th>
                 <th>Nombre de Heroe</th>
                 <th>Poder</th>
                 <th>Grupo</th>

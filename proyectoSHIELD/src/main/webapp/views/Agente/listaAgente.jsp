@@ -1,5 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;" pageEncoding="ISO-8859-1" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="modelos.Agentes , java.util.List" %>
 <%
@@ -7,7 +6,7 @@
     request.setAttribute("titulo", titulo);
 %>
 <%@ include file="../encabezado.jsp" %>
-<%@ include file="../barranav.jsp" %>
+<%@ include file="../UIAdmin/barranav.jsp" %>
 <article class="cont-body">
     <section class="cont-base">
         <div class="base-header">
@@ -20,7 +19,7 @@
         <table>
             <thead>
             <tr>
-                <th>CÃ³digo</th>
+                <th>Código</th>
                 <th>Agente</th>
                 <th>Especialidad</th>
                 <th>Tipo Ayuda</th>

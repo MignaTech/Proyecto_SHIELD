@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;" pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="modelos.Agentes, modelos.Juntas, java.util.List" %>
@@ -7,11 +7,11 @@
     request.setAttribute("titulo", titulo);
 %>
 <%@ include file="../encabezado.jsp" %>
-<%@ include file="../barranav.jsp" %>
+<%@ include file="../UIAdmin/barranav.jsp" %>
 <article class="cont-body">
     <section class="cont-base" style="width: 570px">
         <div class="base-header">
-            <h1 class="base-title">AÃ±adir Agente a Junta</h1>
+            <h1 class="base-title">Añadir Agente a Junta</h1>
             <a class="btn das" href="<%=esc%>">Dashboard</a>
         </div>
         <div class="form-container">

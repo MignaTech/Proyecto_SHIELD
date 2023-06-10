@@ -1,5 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;" pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="modelos.Ataque , java.util.List" %>
 <%
@@ -7,7 +6,7 @@
     request.setAttribute("titulo", titulo);
 %>
 <%@ include file="../encabezado.jsp" %>
-<%@ include file="../barranav.jsp" %>
+<%@ include file="../UIAdmin/barranav.jsp" %>
 <article class="cont-body">
     <section class="cont-base">
         <div class="base-header">
@@ -20,7 +19,7 @@
         <table>
             <thead>
             <tr>
-                <th>CÃ³digo</th>
+                <th>Código</th>
                 <th>Ataque</th>
                 <th># Bajas</th>
                 <th># Heridos</th>
@@ -37,6 +36,7 @@
                 <td><%= ataque.getNroHeridos() %></td>
                 <td><%= ataque.getN_pais() %></td>
                 <td style="text-align: center">
+                    <a class="btn das" href="AtaqueSV?action=showDetail&codigo=<%= ataque.getCodAtk() %>">Detalle</a>
                     <a class="btn" href="AtaqueSV?action=showEditForm&codigo=<%= ataque.getCodAtk() %>">Modificar</a>
                     <a class="btn secondary" href="AtaqueSV?action=delete&codigo=<%= ataque.getCodAtk() %>">Eliminar</a>
                 </td>
