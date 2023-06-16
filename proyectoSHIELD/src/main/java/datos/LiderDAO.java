@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LiderDAO {
-    public static final String INSERTsql = "INSERT INTO lider (cod_lider,cod_gp_sh,n_lider) VALUES (?, ?, ?)";
+    public static final String INSERTsql = "INSERT INTO lider (cod_lider,cod_gp_sh,n_lider,id_user) " +
+            "VALUES (?,?,?,(SELECT (max(id_user)) FROM usuario))";
+//    public static final String INSERTsql = "INSERT INTO lider (cod_lider,cod_gp_sh,n_lider) VALUES (?, ?, ?)";
     public static final String UPDATEsql = "UPDATE lider SET cod_gp_sh = ?, n_lider = ? WHERE cod_lider = ?";
     public static final String DELETEsql = "DELETE FROM lider WHERE cod_lider = ?";
     public static final String FROMsql = "SELECT l.cod_lider, gs.n_gp, l.n_lider\n" +

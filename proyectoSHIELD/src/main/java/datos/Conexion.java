@@ -2,8 +2,8 @@ package datos;
 import java.sql.*;
 
 public class Conexion {
-    private static String user = "postgres";
-    private static String pswd = "123456";
+    private static String user = "migna";
+    private static String pswd = "root";
     private static String bd = "pro_Shield";
     private static String server = "jdbc:postgresql://localhost:5432/" + bd;
     private static String driver = "org.postgresql.Driver";
@@ -28,6 +28,14 @@ public class Conexion {
     }
 
     public static void close(PreparedStatement state){
+        try {
+            state.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        }
+    }
+
+    public static void close(Statement state){
         try {
             state.close();
         } catch (SQLException ex) {

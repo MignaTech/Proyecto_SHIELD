@@ -13,6 +13,11 @@ public class AgenAtkDAO {
             "FROM agen_atk aa\n" +
             "JOIN agentes a on a.cod_agen = aa.cod_agen\n" +
             "JOIN ataque a2 on a2.cod_atk = aa.cod_atk";
+    public static final String FROMsql2 = "SELECT aa.*, a.n_agen, a2.n_atk\n" +
+            "FROM agen_atk aa\n" +
+            "JOIN agentes a on a.cod_agen = aa.cod_agen\n" +
+            "JOIN ataque a2 on a2.cod_atk = aa.cod_atk\n" +
+            "where a.n_agen = ?";
     public static final String WHEREsql = "SELECT f_inco, f_reti, cod_agen, cod_atk FROM agen_atk WHERE cod_agen=? AND cod_atk=?";
 
     public int addAgenAtk(AgenAtk elem) {
@@ -85,6 +90,37 @@ public class AgenAtkDAO {
         try {
             conn = Conexion.getConnection();
             ps = conn.prepareStatement(FROMsql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Date inicio = rs.getDate("f_inco");
+                Date fin = rs.getDate("f_reti");
+                int idagente = rs.getInt("cod_agen");
+                int idataque = rs.getInt("cod_atk");
+                String agente = rs.getString("n_agen");
+                String ataque = rs.getString("n_atk");
+                elem = new AgenAtk(inicio,fin,idagente,idataque,agente,ataque);
+                elems.add(elem);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(ps);
+            Conexion.close(conn);
+        }
+        return elems;
+    }
+
+    public List<AgenAtk> idAgenAtk(String name) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        AgenAtk elem = null;
+        List<AgenAtk> elems = new ArrayList<>();
+        try {
+            conn = Conexion.getConnection();
+            ps = conn.prepareStatement(FROMsql2);
+            ps.setString(1, name);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Date inicio = rs.getDate("f_inco");

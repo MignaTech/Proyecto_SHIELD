@@ -119,4 +119,27 @@ public class CapacidadDAO {
         }
         return null;
     }
+
+    public int n_Capacidad() {
+        int nuevo = 0;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            String query = "SELECT max(cod_cap) AS iden FROM capacidad";
+            conn = Conexion.getConnection();
+            ps = conn.prepareStatement(query);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                nuevo = rs.getInt("iden");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(ps);
+            Conexion.close(conn);
+        }
+        return nuevo;
+    }
 }

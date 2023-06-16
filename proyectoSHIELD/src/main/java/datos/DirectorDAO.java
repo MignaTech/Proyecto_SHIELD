@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DirectorDAO {
-    public static final String INSERTsql = "INSERT INTO director (cod_dir,n_dir,rango_dir,lider) VALUES (?, ?,?, ?)";
+    public static final String INSERTsql = "INSERT INTO director (cod_dir, n_dir, rango_dir, lider, id_user) " +
+            "VALUES(?, ?, ?, ?, (SELECT (max(id_user)) FROM usuario))";
+    //    public static final String INSERTsql = "INSERT INTO director (cod_dir,n_dir,rango_dir,lider) VALUES (?, ?,?, ?)";
     public static final String UPDATEsql = "UPDATE director SET n_dir = ?, rango_dir = ?, lider = ? WHERE cod_dir = ?";
     public static final String DELETEsql = "DELETE FROM director WHERE cod_dir = ?";
     public static final String FROMsql = "SELECT d.cod_dir, d.n_dir,d.rango_dir,l.n_lider\n" +

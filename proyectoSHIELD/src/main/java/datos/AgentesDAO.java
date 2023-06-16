@@ -9,12 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AgentesDAO {
-    public static final String INSERTsql = "INSERT INTO agentes (cod_agen,n_agen,espe,tp_ayuda,agen_dir) VALUES (?, ?,?, ?,?)";
+    public static final String INSERTsql = "INSERT INTO agentes (cod_agen,n_agen,espe,tp_ayuda,agen_dir,id_user) " +
+            "VALUES (?,?,?,?,?,(SELECT (max(id_user)) FROM usuario))";
+//    public static final String INSERTsql = "INSERT INTO agentes (cod_agen,n_agen,espe,tp_ayuda,agen_dir) VALUES (?, ?,?, ?,?)";
     public static final String UPDATEsql = "UPDATE agentes SET n_agen = ?,espe = ?,tp_ayuda = ?,agen_dir = ? WHERE cod_agen = ?";
     public static final String DELETEsql = "DELETE FROM agentes WHERE cod_agen = ?";
-    public static final String FROMsql = "SELECT a.cod_agen,a.n_agen,a.espe,a.tp_ayuda, a2.n_agen AS n_Dir\n" +
+    public static final String FROMsql = "SELECT a.cod_agen,a.n_agen,a.espe,a.tp_ayuda,a.agen_dir, a2.n_agen AS n_Dir\n" +
             "FROM agentes a\n" +
-            "join agentes a2 on a.agen_dir = a2.cod_agen";
+            "join agentes a2 on a.agen_dir = a2.cod_agen\n" +
+            "ORDER BY a.cod_agen";
     public static final String WHEREsql = "SELECT a.cod_agen,a.n_agen,a.espe,a.tp_ayuda,a.agen_dir, a2.n_agen AS n_Dir\n" +
             "FROM agentes a\n" +
             "join agentes a2 on a.agen_dir = a2.cod_agen\n" +
@@ -97,8 +100,9 @@ public class AgentesDAO {
                 String nombre = rs.getString("n_agen");
                 String especi = rs.getString("espe");
                 String t_ayuda = rs.getString("tp_ayuda");
+                int dirid = rs.getInt("agen_dir");
                 String dir = rs.getString("n_Dir");
-                elem = new Agentes(codigo,nombre,especi,t_ayuda,dir);
+                elem = new Agentes(codigo,nombre,especi,t_ayuda,dirid,dir);
                 elems.add(elem);
             }
         } catch (SQLException e) {

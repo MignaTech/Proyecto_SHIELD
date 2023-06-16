@@ -14,6 +14,11 @@ public class AgenJuntasDAO {
             "JOIN agentes a on a.cod_agen = aj.cod_agen\n" +
             "JOIN juntas j on aj.cod_junta = j.cod_junta\n" +
             "ORDER BY j.fecha";
+    public static final String FROMsql1 = "SELECT aj.cod_agen, aj.cod_junta,a.n_agen,j.contenido,j.fecha\n" +
+            "FROM agen_juntas aj\n" +
+            "JOIN agentes a on a.cod_agen = aj.cod_agen\n" +
+            "JOIN juntas j on aj.cod_junta = j.cod_junta\n" +
+            "WHERE a.n_agen = ?";
     public static final String WHEREsql = "SELECT aj.cod_agen, aj.cod_junta,a.n_agen,j.contenido,j.fecha\n" +
             "FROM agen_juntas aj\n" +
             "JOIN agentes a on a.cod_agen = aj.cod_agen\n" +
@@ -67,6 +72,36 @@ public class AgenJuntasDAO {
         try {
             conn = Conexion.getConnection();
             ps = conn.prepareStatement(FROMsql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                int c_agen = rs.getInt("cod_agen");
+                int c_junta = rs.getInt("cod_junta");
+                String agente = rs.getString("n_agen");
+                String junta = rs.getString("contenido");
+                Date fecha = rs.getDate("fecha");
+                elem = new AgenJuntas(c_agen, c_junta, agente, junta, fecha);
+                elems.add(elem);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(ps);
+            Conexion.close(conn);
+        }
+        return elems;
+    }
+
+    public List<AgenJuntas> idAgenJuntas(String name) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        AgenJuntas elem = null;
+        List<AgenJuntas> elems = new ArrayList<>();
+        try {
+            conn = Conexion.getConnection();
+            ps = conn.prepareStatement(FROMsql1);
+            ps.setString(1, name);
             rs = ps.executeQuery();
             while (rs.next()) {
                 int c_agen = rs.getInt("cod_agen");
