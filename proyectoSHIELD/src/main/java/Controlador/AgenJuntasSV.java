@@ -43,10 +43,10 @@ public class AgenJuntasSV extends HttpServlet {
                 AgenJuntas equipo = agenjuntasDAO.getByAgenJuntas(codigo1,codigo2);
                 if (equipo != null) {
                     agenjuntasDAO.delAgenJuntas(equipo);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró");
                 }
                 rq.setAttribute("msj_title", "El agente que ira a la junta");
@@ -64,10 +64,10 @@ public class AgenJuntasSV extends HttpServlet {
             int junta = Integer.parseInt(rq.getParameter("junta"));
             AgenJuntas equipo = new AgenJuntas(agente,junta);
             if (agenjuntasDAO.addAgenJuntas(equipo) > 0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El agente que ira a la junta");

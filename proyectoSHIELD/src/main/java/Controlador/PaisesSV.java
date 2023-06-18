@@ -43,10 +43,10 @@ public class PaisesSV extends HttpServlet {
                 pais = paisesDAO.getByPaises(codigo);
                 if (pais != null) {
                     paisesDAO.delPaises(pais);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró el pais a eliminar");
                 }
                 rq.setAttribute("msj_title", "El Pais");
@@ -64,15 +64,16 @@ public class PaisesSV extends HttpServlet {
             String nombre = rq.getParameter("nombre");
             Paises paises = new Paises(codigo, nombre);
             if (paisesDAO.addPaises(paises)>0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El Pais");
             rq.setAttribute("msj_return", "PaisesSV");
             rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
+
         } else if (action.equals("edit")) {
             String codigo = rq.getParameter("codigo");
             String nombre = rq.getParameter("nombre");
@@ -80,17 +81,17 @@ public class PaisesSV extends HttpServlet {
             if (paises != null) {
                 paises.setnPais(nombre);
                 if (paisesDAO.modPaises(paises)>0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El Pais");
                 rq.setAttribute("msj_return", "PaisesSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro el id a modificar");
                 rq.setAttribute("msj_title", "El Pais");
                 rq.setAttribute("msj_return", "PaisesSV");

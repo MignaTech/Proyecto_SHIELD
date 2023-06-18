@@ -44,10 +44,10 @@ public class SuperH_SV extends HttpServlet {
                 gp_sh = shDAO.getBySuperH(codigo);
                 if (gp_sh != null) {
                     shDAO.delSuperH(gp_sh);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró el pais a eliminar");
                 }
                 rq.setAttribute("msj_title", "El Grupo de Super Heroe");
@@ -61,14 +61,14 @@ public class SuperH_SV extends HttpServlet {
     protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
         String action = rq.getParameter("meto2");
         if (action.equals("add")) {
-            int codigo = Integer.parseInt(rq.getParameter("codigo"));
+            int codigo = shDAO.n_SuperHs()+1;
             String nombre = rq.getParameter("nombre");
             GrupoSh gp_sh = new GrupoSh(codigo, nombre);
             if (shDAO.addSuperH(gp_sh)>0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El Grupo de Super Heroe");
@@ -81,17 +81,17 @@ public class SuperH_SV extends HttpServlet {
             if (gp_sh != null) {
                 gp_sh.setnGp(nombre);
                 if (shDAO.modSuperH(gp_sh)>0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El Grupo de Super Heroe");
                 rq.setAttribute("msj_return", "SuperH_SV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro");
                 rq.setAttribute("msj_title", "El Grupo de Super Heroe");
                 rq.setAttribute("msj_return", "SuperH_SV");

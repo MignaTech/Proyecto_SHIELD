@@ -47,10 +47,10 @@ public class AgentesSV extends HttpServlet {
                 agente = agentesDAO.getByAgentes(codigo);
                 if (agente != null) {
                     agentesDAO.delAgentes(agente);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró el pais a eliminar");
                 }
                 rq.setAttribute("msj_title", "El Agente");
@@ -71,10 +71,10 @@ public class AgentesSV extends HttpServlet {
             int direc = Integer.parseInt(rq.getParameter("director"));
             Agentes agente = new Agentes(codigo,nombre,espe,ayuda,direc);
             if (agentesDAO.addAgentes(agente)>0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El Agente");
@@ -93,17 +93,17 @@ public class AgentesSV extends HttpServlet {
                 agente.setTpAyuda(ayuda);
                 agente.setAgenDir(direc);
                 if (agentesDAO.modAgentes(agente)>0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El Agente");
                 rq.setAttribute("msj_return", "AgentesSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro");
                 rq.setAttribute("msj_title", "El Agente");
                 rq.setAttribute("msj_return", "AgentesSV");

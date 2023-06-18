@@ -44,10 +44,10 @@ public class EquipoSV extends HttpServlet {
                 equipo = equipoDAO.getByEquipo(codigo);
                 if (equipo != null) {
                     equipoDAO.delEquipo(equipo);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró el equipo a eliminar");
                 }
                 rq.setAttribute("msj_title", "El Equipo");
@@ -61,14 +61,14 @@ public class EquipoSV extends HttpServlet {
     protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
         String action = rq.getParameter("meto2");
         if (action.equals("add")) {
-            int codigo = Integer.parseInt(rq.getParameter("codigo"));
+            int codigo = equipoDAO.n_Equipo()+1;
             String nombre = rq.getParameter("nombre");
             Equipo equipo = new Equipo(codigo, nombre);
             if (equipoDAO.addEquipo(equipo)>0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El Equipo");
@@ -81,17 +81,17 @@ public class EquipoSV extends HttpServlet {
             if (equipo != null) {
                 equipo.setnEq(nombre);
                 if (equipoDAO.modEquipo(equipo)>0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El Equipo");
                 rq.setAttribute("msj_return", "EquipoSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro el id a modificar");
                 rq.setAttribute("msj_title", "El Equipo");
                 rq.setAttribute("msj_return", "EquipoSV");

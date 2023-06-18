@@ -43,10 +43,10 @@ public class CapacidadSV extends HttpServlet {
                 capacidad = capaDAO.getByCapacidad(codigo);
                 if (capacidad != null) {
                     capaDAO.delCapacidad(capacidad);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró la capacidad a eliminar.");
                 }
                 rq.setAttribute("msj_title", "La Capacidad");
@@ -60,14 +60,14 @@ public class CapacidadSV extends HttpServlet {
     protected void doPost(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
         String action = rq.getParameter("meto2");
         if (action.equals("add")) {
-            int codigo = Integer.parseInt(rq.getParameter("codigo"));
+            int codigo = capaDAO.n_Capacidad()+1;
             String nombre = rq.getParameter("nombre");
             Capacidad capacidad = new Capacidad(codigo, nombre);
             if (capaDAO.addCapacidad(capacidad)>0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "La Capacidad");
@@ -80,17 +80,17 @@ public class CapacidadSV extends HttpServlet {
             if (capacidad != null) {
                 capacidad.setTpCap(nombre);
                 if (capaDAO.modCapacidad(capacidad)>0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "La Capacidad");
                 rq.setAttribute("msj_return", "CapacidadSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro la capacidad a modificar.");
                 rq.setAttribute("msj_title", "La Capacidad");
                 rq.setAttribute("msj_return", "CapacidadSV");

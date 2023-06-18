@@ -55,10 +55,10 @@ public class AgenAtkSV extends HttpServlet {
                 agenAtk = agenAtkDAO.getByAgenAtk(codigo1,codigo2);
                 if (agenAtk != null) {
                     agenAtkDAO.delAgenAtk(agenAtk);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró");
                 }
                 rq.setAttribute("msj_title", "El Agente que atiende al Ataque");
@@ -78,10 +78,10 @@ public class AgenAtkSV extends HttpServlet {
             int ataque = Integer.parseInt(rq.getParameter("ataque"));
             AgenAtk agenAtk = new AgenAtk(inicio,fin,agente,ataque);
             if (agenAtkDAO.addAgenAtk(agenAtk) > 0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El Agente que atiende al Ataque");
@@ -97,17 +97,17 @@ public class AgenAtkSV extends HttpServlet {
                 agenAtk.setfInco(inicio);
                 agenAtk.setfReti(fin);
                 if (agenAtkDAO.modAgenAtk(agenAtk) > 0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El Agente que atiende al Ataque");
                 rq.setAttribute("msj_return", "AgenAtkSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro");
                 rq.setAttribute("msj_title", "El Agente que atiende al Ataque");
                 rq.setAttribute("msj_return", "AgenAtkSV");

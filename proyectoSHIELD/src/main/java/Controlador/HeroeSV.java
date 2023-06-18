@@ -82,13 +82,21 @@ public class HeroeSV extends HttpServlet {
     }
 
     private void agregarHeroe(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
-        int codigo = Integer.parseInt(rq.getParameter("codigo"));
+        int codigo = heroeDAO.n_Heroe()+1;
         String nombre = rq.getParameter("nombre");
         String poder = rq.getParameter("poder");
         int grupo = Integer.parseInt(rq.getParameter("grupo"));
         Heroe heroe = new Heroe(codigo, nombre, poder, grupo);
-        heroeDAO.addHeroe(heroe);
-        rp.sendRedirect("HeroeSV?page=1");
+        if (heroeDAO.addHeroe(heroe)>0) {
+            rq.setAttribute("msj_img", "success.gif");
+            rq.setAttribute("msj_text", "Se agrego exitosamente");
+        } else {
+            rq.setAttribute("msj_img", "info.gif");
+            rq.setAttribute("msj_text", "No se pudo agregar");
+        }
+        rq.setAttribute("msj_title", "El Heroe");
+        rq.setAttribute("msj_return", "HeroeSV?page=1");
+        rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
     }
 
     private void modificarHeroe(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
@@ -101,14 +109,24 @@ public class HeroeSV extends HttpServlet {
             heroes.setnHeroe(nombre);
             heroes.setPoder(poder);
             heroes.setCodGp(grupo);
-            heroeDAO.modHeroe(heroes);
-            rq.setAttribute("mensaje", "Heroe modificado exitosamente.");
-            rq.setAttribute("color", "green");
+
+            if (heroeDAO.modHeroe(heroes)>0) {
+                rq.setAttribute("msj_img", "success.gif");
+                rq.setAttribute("msj_text", "Se modifico exitosamente");
+            } else {
+                rq.setAttribute("msj_img", "info.gif");
+                rq.setAttribute("msj_text", "No se pudo modificar");
+            }
+            rq.setAttribute("msj_title", "El Heroe");
+            rq.setAttribute("msj_return", "HeroeSV?page=1");
+            rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
         } else {
-            rq.setAttribute("mensaje", "No se encontró el heroe a modificar.");
-            rq.setAttribute("color", "red");
+            rq.setAttribute("msj_img", "info.gif");
+            rq.setAttribute("msj_text", "No se encontro la capacidad a modificar.");
+            rq.setAttribute("msj_title", "La Capacidad");
+            rq.setAttribute("msj_return", "HeroeSV?page=1");
+            rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
         }
-        rp.sendRedirect("HeroeSV?page=1");
     }
 
     private void eliminarHeroe(HttpServletRequest rq, HttpServletResponse rp) throws ServletException, IOException {
@@ -116,12 +134,14 @@ public class HeroeSV extends HttpServlet {
         Heroe heroes = heroeDAO.getByHeroe(codigo);
         if (heroes != null) {
             heroeDAO.delHeroe(heroes);
-            rq.setAttribute("mensaje", "Heroe eliminado exitosamente.");
-            rq.setAttribute("color", "green");
+            rq.setAttribute("msj_img", "success.gif");
+            rq.setAttribute("msj_text", "Se elimino exitosamente");
         } else {
-            rq.setAttribute("mensaje", "No se encontró el heroe a eliminar.");
-            rq.setAttribute("color", "red");
+            rq.setAttribute("msj_img", "info.gif");
+            rq.setAttribute("msj_text", "No se encontró la capacidad a eliminar.");
         }
-        rp.sendRedirect("HeroeSV?page=1");
+        rq.setAttribute("msj_title", "El Heroe");
+        rq.setAttribute("msj_return", "HeroeSV?page=1");
+        rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
     }
 }

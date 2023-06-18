@@ -49,10 +49,10 @@ public class DirectorSV extends HttpServlet {
                 director = directorDAO.getByDirector(codigo);
                 if (director != null) {
                     directorDAO.delDirector(director);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró");
                 }
                 rq.setAttribute("msj_title", "El Director");
@@ -72,10 +72,10 @@ public class DirectorSV extends HttpServlet {
             int lider = Integer.parseInt(rq.getParameter("lider"));
             Director director = new Director(codigo, nombre, rango, lider);
             if (directorDAO.addDirector(director) > 0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El Director");
@@ -95,14 +95,14 @@ public class DirectorSV extends HttpServlet {
                     rq.setAttribute("msj_img", "succe.svg");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El Director");
                 rq.setAttribute("msj_return", "DirectorSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro");
                 rq.setAttribute("msj_title", "El Director");
                 rq.setAttribute("msj_return", "DirectorSV");

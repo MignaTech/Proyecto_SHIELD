@@ -49,10 +49,10 @@ public class SiShSV extends HttpServlet {
                 sish = sishDAO.getBySiSh(codigo);
                 if (sish != null) {
                     sishDAO.delSiSh(sish);
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se elimino exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se encontró");
                 }
                 rq.setAttribute("msj_title", "El CEO de Stark Industries");
@@ -71,10 +71,10 @@ public class SiShSV extends HttpServlet {
             int grupo = Integer.parseInt(rq.getParameter("grupo"));
             SiSh sish = new SiSh(codigo, nombre, grupo);
             if (sishDAO.addSiSh(sish) > 0) {
-                rq.setAttribute("msj_img", "succe.svg");
+                rq.setAttribute("msj_img", "success.gif");
                 rq.setAttribute("msj_text", "Se agrego exitosamente");
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se pudo agregar");
             }
             rq.setAttribute("msj_title", "El CEO de Stark Industries");
@@ -89,17 +89,17 @@ public class SiShSV extends HttpServlet {
                 sish.setnCeo(nombre);
                 sish.setCodGpSh(grupo);
                 if (sishDAO.modSiSh(sish) > 0) {
-                    rq.setAttribute("msj_img", "succe.svg");
+                    rq.setAttribute("msj_img", "success.gif");
                     rq.setAttribute("msj_text", "Se modifico exitosamente");
                 } else {
-                    rq.setAttribute("msj_img", "borrar.png");
+                    rq.setAttribute("msj_img", "info.gif");
                     rq.setAttribute("msj_text", "No se pudo modificar");
                 }
                 rq.setAttribute("msj_title", "El CEO de Stark Industries");
                 rq.setAttribute("msj_return", "SiShSV");
                 rq.getRequestDispatcher("./views/mensage.jsp").forward(rq, rp);
             } else {
-                rq.setAttribute("msj_img", "borrar.png");
+                rq.setAttribute("msj_img", "info.gif");
                 rq.setAttribute("msj_text", "No se encontro");
                 rq.setAttribute("msj_title", "El CEO de Stark Industries");
                 rq.setAttribute("msj_return", "SiShSV");
