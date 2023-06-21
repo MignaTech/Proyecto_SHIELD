@@ -60,7 +60,7 @@
     <div class="popup">
         <img src="<%=raiz%>/assets/img/<%= msj_img %>">
         <h2><%= msj_title %></h2>
-        <p><%= msj_text %></p>
+        <pre style="font-size: 16px;"><%= msj_text %></pre>
         <button type="button" onclick="window.location.href='<%=raiz%>/<%=msj_return%>'">OK</button>
     </div>
 </body>

@@ -1,8 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page contentType="text/html;" pageEncoding="ISO-8859-1" %>
     <footer class="pie">
-        Sixtega Escribano Miguel √Ångel
-        <strong>Copyright &copy; 2023 <a href="#">Migna</a> Todos los derechos reservados</strong>
+        Sixtega Escribano Miguel ¡ngel
+        <strong>Copyright &copy; 2023 <a style="color: black"
+                                         href="https://github.com/MignaTech/"
+                                         target="_blank" rel="noopener noreferrer">
+            @MignaTech</a>
+            Todos los derechos reservados</strong>
     </footer>
     </div>
 <script>
