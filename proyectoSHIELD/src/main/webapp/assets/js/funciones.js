@@ -1,44 +1,44 @@
 document.getElementById("btnListCapacidad").addEventListener("click", function() {
-    window.location.href = "../CapacidadSV";
+    window.location.href = "../../CapacidadSV";
 });
 document.getElementById("btnListAgente").addEventListener("click", function() {
-    window.location.href = "../AgentesSV";
+    window.location.href = "../../AgentesSV";
 });
 document.getElementById("btnListEquipo").addEventListener("click", function() {
-    window.location.href = "../EquipoSV";
+    window.location.href = "../../EquipoSV";
 });
 document.getElementById("btnListGrupo").addEventListener("click", function() {
-    window.location.href = "../SuperH_SV";
+    window.location.href = "../../SuperH_SV";
 });
 document.getElementById("btnListPais").addEventListener("click", function() {
-    window.location.href = "../PaisesSV";
+    window.location.href = "../../PaisesSV";
 });
 document.getElementById("btnListTpRaza").addEventListener("click", function() {
-    window.location.href = "../Tip_AlienSV";
+    window.location.href = "../../Tip_AlienSV";
 });
 document.getElementById("btnListAtaque").addEventListener("click", function() {
-    window.location.href = "../AtaqueSV";
+    window.location.href = "../../AtaqueSV";
 });
 document.getElementById("btnListLider").addEventListener("click", function() {
-    window.location.href = "../LiderSV";
+    window.location.href = "../../LiderSV";
 });
 document.getElementById("btnListDirector").addEventListener("click", function() {
-    window.location.href = "../DirectorSV";
+    window.location.href = "../../DirectorSV";
 });
 document.getElementById("btnListJuntas").addEventListener("click", function() {
-    window.location.href = "../JuntasSV";
+    window.location.href = "../../JuntasSV";
 });
 document.getElementById("btnListStark").addEventListener("click", function() {
-    window.location.href = "../SiShSV";
+    window.location.href = "../../SiShSV";
 });
 document.getElementById("btnListAgenJunta").addEventListener("click", function() {
-    window.location.href = "../AgenJuntasSV";
+    window.location.href = "../../AgenJuntasSV";
 });
 document.getElementById("btnListAgenAtk").addEventListener("click", function() {
-    window.location.href = "../AgenAtkSV";
+    window.location.href = "../../AgenAtkSV";
 });
 document.getElementById("btnListHeroe").addEventListener("click", function() {
-    window.location.href = "../HeroeSV?page=1";
+    window.location.href = "../../HeroeSV?page=1";
 });
 
 function mosBTN(id) {
